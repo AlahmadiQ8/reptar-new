@@ -1,0 +1,104 @@
+// ----------------------
+// VARIABLES
+// ----------------------
+
+$font-family-sans-serif:     "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-ejs:            'Montserrat', sans-serif;
+
+$font-family-base:           $font-family-sans-serif;
+
+$blue:                      #39ADD1 !default;
+$blue-light:                #72D4FF;
+$blue-black:                #253746;
+$green:                     #5CB860 !default;
+$pink:                      #F092B0 !default;
+$pink-dark:                 #C25975 !default;
+
+$link-color:                $blue;
+$hover-color:               $blue-light;
+
+$main-width:                1000px;
+
+$sm:                        576px;
+$md:                        768px;
+$lg:                        992px;
+$xl:                        1200px;
+
+// ----------------------
+// DEBUG  
+// ----------------------
+.border {
+  border: 1px dashed $blue;
+}
+.container {
+  @extend .border;
+  // margin: 50px auto;
+  // max-width: $main-width;
+}
+
+// ----------------------
+// BASE 
+// ----------------------
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-base; 
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 300ms 0s ease;
+  &:hover {
+    color: $hover-color;
+    text-decoration: none;
+  }
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.body-wrapper {
+  flex: 1;
+  max-width: $main-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  @media (min-width: $md) { 
+    margin-top: 60px;
+  }
+}
+
+.display-6 {
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+// ----------------------
+// LAYOUT 
+// ----------------------
+
+.box-margin {
+  margin-bottom: 1rem;
+  @media (min-width: $md) { 
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
+.box-margin-last {
+  margin-bottom: 1rem;
+  @media (min-width: $md) { 
+    margin-bottom: 0;
+  }
+}
+.box-padding { 
+  padding: 1rem;
+}
+
+// ----------------------
+// PROFILE HEADER 
+// ----------------------
