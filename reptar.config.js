@@ -91,7 +91,10 @@ module.exports = {
     },
     {
       test: 'img'
-    }
+    },
+    {
+      test: 'fonts'
+    },
   ],
   // If we should remove the compile destination folder before writing.
   cleanDestination: false,

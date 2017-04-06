@@ -7,7 +7,13 @@ $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-ejs:            'Montserrat', sans-serif;
 
-$font-family-base:           $font-family-sans-serif;
+$primary-text:               rgba(0, 0, 0, .87);
+$secondary-text:             rgba(0, 0, 0, .54);
+$thirdary-text:              rgba(0, 0, 0, .38);
+
+$primary-text-light:         rgba(255, 255, 255, .87);
+$secondary-text-light:       rgba(255, 255, 255, .70);
+$thirdary-text-light:        rgba(255, 255, 255, .54);
 
 $blue:                      #39ADD1 !default;
 $blue-light:                #72D4FF;
@@ -16,15 +22,15 @@ $green:                     #5CB860 !default;
 $pink:                      #F092B0 !default;
 $pink-dark:                 #C25975 !default;
 
-$link-color:                $blue;
-$hover-color:               $blue-light;
-
-$main-width:                1000px;
-
 $sm:                        576px;
 $md:                        768px;
 $lg:                        992px;
 $xl:                        1200px;
+
+$font-family-base:          $font-family-sans-serif;
+$link-color:                $blue;
+$hover-color:               $blue-light;
+$main-width:                1000px;
 
 // ----------------------
 // DEBUG  
@@ -33,7 +39,7 @@ $xl:                        1200px;
   border: 1px dashed $blue;
 }
 .container {
-  @extend .border;
+  // @extend .border;
   // margin: 50px auto;
   // max-width: $main-width;
 }
@@ -72,6 +78,13 @@ body {
   }
 }
 
+footer {
+  max-width: $main-width !important;
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .display-6 {
     font-size: 1.7rem;
     font-weight: 300;
@@ -99,6 +112,25 @@ body {
   padding: 1rem;
 }
 
+.flex-row {
+  display: flex; 
+  flex-direction: row;
+}
+.flex-row-around {
+  @extend .flex-row;
+  justify-content: space-around;
+}
+.flex-row-between {
+  @extend .flex-row;
+  justify-content: space-between;
+}
+
 // ----------------------
 // PROFILE HEADER 
 // ----------------------
+.profile-header h1 {
+  margin-bottom: 0;
+}
+.social-item{
+  font-size: 1.5rem;
+}
