@@ -18,9 +18,11 @@ $thirdary-text-light:        rgba(255, 255, 255, .54);
 $blue:                      #39ADD1 !default;
 $blue-light:                #72D4FF;
 $blue-black:                #253746;
+$blue-cool:                 #10ACC2;
 $green:                     #5CB860 !default;
 $pink:                      #F092B0 !default;
 $pink-dark:                 #C25975 !default;
+$black-alt:                 #001C20;
 
 $sm:                        576px;
 $md:                        768px;
@@ -31,18 +33,20 @@ $font-family-base:          $font-family-sans-serif;
 $link-color:                $blue;
 $hover-color:               $blue-light;
 $main-width:                1000px;
+$border-styling:            2px solid #ebebeb;
+$profile-background:        $blue-cool;
 
 // ----------------------
 // DEBUG  
 // ----------------------
-.border {
-  border: 1px dashed $blue;
-}
 .container {
   // @extend .border;
   // margin: 50px auto;
   // max-width: $main-width;
 }
+// div[class*="col"] {
+//   padding: 0;
+// }
 
 // ----------------------
 // BASE 
@@ -50,6 +54,10 @@ $main-width:                1000px;
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-base; 
+}
+
+ul {
+  padding-left: 1rem;
 }
 
 a {
@@ -60,6 +68,23 @@ a {
     color: $hover-color;
     text-decoration: none;
   }
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,li {
+  color: $primary-text;
+}
+h1 {
+  font-size: 2rem;
+  color: $pink-dark;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
 }
 
 body {
@@ -91,6 +116,16 @@ footer {
     line-height: 1.1;
 }
 
+.border {
+  border: $border-styling;
+}
+.border-top {
+  border-top: $border-styling;
+}
+
+.text-muted {
+  color: $thirdary-text;
+}
 // ----------------------
 // LAYOUT 
 // ----------------------
@@ -98,14 +133,14 @@ footer {
 .box-margin {
   margin-bottom: 1rem;
   @media (min-width: $md) { 
-    margin-bottom: 0;
+    // margin-bottom: 0;
     margin-right: 1rem;
   }
 }
 .box-margin-last {
   margin-bottom: 1rem;
   @media (min-width: $md) { 
-    margin-bottom: 0;
+    // margin-bottom: 0;
   }
 }
 .box-padding { 
@@ -128,8 +163,22 @@ footer {
 // ----------------------
 // PROFILE HEADER 
 // ----------------------
-.profile-header h1 {
-  margin-bottom: 0;
+.profile-header {
+  h1, p {  
+    margin-bottom: 0;
+  }
+  p {
+    font-weight: lighter;
+  } 
+}
+.profile-box { 
+  background-color: $profile-background;
+  a {
+    color: white;
+    &:hover {
+      color: $thirdary-text-light;
+    }
+  }
 }
 .social-item{
   font-size: 1.5rem;

@@ -1,0 +1,38 @@
+about_me: <p>My name is Mohammad Mohammad (that explains the ²). 
+  I'm from Kuwait and currently live in Los Angeles. I work at  
+  <a target="_blank" href="http://home.elephantdrive.com/">ElephantDrive</a>  
+  as a Developer Support Engineer.I spend a lot of time playing with Node.js 
+  and open source projects on Github.  I also like building websites for fun. 
+  You can learn more about me here <a href="/about">here</a>.
+  </p>
+
+social:
+  github: https://github.com/AlahmadiQ8
+  instagram: https://www.instagram.com/boas3d/
+  facebook: https://www.facebook.com/m91.mohammad
+  stackoverflow: http://stackoverflow.com/users/5431968/mmohammad
+  linkedin: https://www.linkedin.com/in/mohammad91
+
+projects: 
+  -
+    name: Amazon S3 Routing Rules Builder
+    url: https://alahmadiq8.github.io/S3-Routing-Rules-Builder/
+    description: Inspired by <a href="https://www.netlify.com/docs/redirects/">Netlify</a>'s 
+                 redirect syntax, build <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/HowDoIWebsiteConfiguration.html#configure-bucket-as-website-routing-rule-syntax">
+                 S3 conditional routing rules</a> using a simple space separated syntax.
+  -
+    name: WunderList Parser
+    url: https://wunderlist-parser.herokuapp.com
+    description: A Node.js web app to parse line separated tasks into <a target="_blank" href="https://www.wunderlist.com">WunderList</a> user's
+                 account using Wunderlist REST api. This was an implemenation of a users' 
+                 requested feature <a target="_blank" href="https://support.wunderlist.com/customer/portal/questions/12881772-importing-a-text-list-of-tasks">
+                 Importing a text list of tasks</a>.
+  -
+    name: SignSpeach
+    url: https://github.com/AlahmadiQ8/SignSpeech
+    description: A Communication Device for Sign Language Users
+  -
+    name: Cell Router
+    url: https://dl.dropboxusercontent.com/u/36164308/Standard%20Cell%20Router.pdf
+    description: Wrote a routing algorithm programmed in C++ to route all pins
+                 in a given nanometer IC
