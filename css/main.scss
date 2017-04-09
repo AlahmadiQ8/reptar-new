@@ -101,7 +101,7 @@ body {
   margin-right: auto;
   margin-top: 10px;
   @media (min-width: $md) { 
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
 
@@ -201,7 +201,27 @@ footer {
   // font-weight: bold;
   margin-bottom: 3rem;
 }
-
+.anchor-link {
+    float: left;
+    padding-right: 5px;
+    margin-left: -20px;
+    line-height: 1;
+    color: #1b1f23;
+    vertical-align: middle;
+    visibility: hidden;
+}
+.anchor-link:focus {
+    outline: none;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  text-decoration: none;
+  visibility: visible;
+}
 .page {
   h2, h3 {
     font-weight: 700;

@@ -1,6 +1,25 @@
 
 const noopMiddleware = () => {};
 
+const markdownAnchor = reptar => {
+  const md = reptar.renderer.getMarkdownEngine();
+  md.use(require('markdown-it-anchor'), {
+    permalink: true,
+    permalinkClass: 'anchor-link',
+    permalinkBefore: true
+  });
+}
+
+const markdownToc = reptar => {
+  const md = reptar.renderer.getMarkdownEngine();
+  md.use(require("markdown-it-table-of-contents"), {
+    includeLevel: [2, 3],
+    containerClass: 'table-of-contents'
+  });
+}
+
+
+
 module.exports = {
   // Site settings.
   // This is where you can put site-wide settings.
@@ -112,7 +131,8 @@ module.exports = {
   // should have. Can be either a string which assumes it's an npm module or
   // a function which is the middleware itself, or an array of either.
   middlewares: [
-    noopMiddleware,
+    markdownAnchor,
+    markdownToc
   ],
   // Lifecycle methods are called at certain points in the lifecycle of Reptar.
   // Each value can be either a string or a function or an array of either.

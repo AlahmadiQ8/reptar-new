@@ -6,6 +6,13 @@ tags:
 ---
 
 
+
+## Table of Contents
+
+[[toc]]
+
+
+
 ## General Javascript 
 
 ### Write a function that sums a variable number of arguments. Then apply the function to sum an array
@@ -290,32 +297,193 @@ using ```delete Employee.company```. Or, we can also delete the ```emp1``` objec
 
 [Source](https://www.codementor.io/nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z)
 
+### Create "native" methods
+
+Define a repeatify function on the String object. The function accepts an integer that specifies how many times the string has to be repeated. The function returns the string repeated the number of times specified. For example:
+
+```javascript
+console.log('hello'.repeatify(3)); // output hellohellohello
+```
+
+```javascript
+String.prototype.repeatify = function(times) {
+  var str = '';
+  for (var i=0; i<times; i++) {
+    str += this; 
+  }
+  return str; 
+}
+```
+
+## Javascript Interview Links 
+
+* [5 Typical JavaScript Interview Exercises](https://www.sitepoint.com/5-typical-javascript-interview-exercises/)
+* [25 Essential JavaScript Interview Questions*](https://www.toptal.com/javascript/interview-questions)
+
+## MongoDb Questions
+
+### Schema design example
+
+* Library Management Application 
+  * Patrons/Users
+  * Books
+  * Authors
+  * Publishers
+
+```javascript 
+db.patrons.find({_id: "joe"})
+{
+  _id: "joe",
+  name: "Joe Bookreader",
+  FavoriteGenres: ['mystery', 'programming'],
+  address: {
+    street: '123 Fake St.',
+    city: "Faketown",
+    state: "MA",
+    zip: "12345"
+  }
+}
+```
+
+### Command to insert a document in a database called school and collection called persons.
+
+```javascript
+db.persons.insert( { name: 'mohammad', dept: 'EE' })
+```
+
+### Mention the command to list all the indexes on a particular collection
+
+```javascript
+db.collection.getIndexes()
+```
+
+## Web Related Questions (REST, Security etc.)
+
+### State The Core Components Of An HTTP Request
+
+Each HTTP request includes five key elements:
+
+1. **Verb** − Indicate HTTP methods such as GET, POST, DELETE, PUT etc.
+2. **URI** − Uniform Resource Identifier (URI) to identify the resource on server.
+3. **HTTP** Version − Indicate HTTP version, for example HTTP v1.1 .
+4. **Request Header** − Contains metadata for the HTTP Request message as key-value pairs. For example, client ( or browser) type, format supported by client, format of message body, cache settings etc.
+5. **Request Body** − Message content or Resource representation.
+
+[Source](http://www.techbeamers.com/rest-api-interview-questions-answers/)
+
+### State The Core Components Of An HTTP Response
+
+Every HTTP response includes four key elements:
+
+1. Status/Response Code – Indicates Server status for the resource present in the HTTP request.For example, 404 means resource not found and 200 means response is ok.
+2. HTTP Version – Indicates HTTP version, for example-HTTP v1.1.
+3. Response Header – Contains metadata for the HTTP response message stored in the form of key-value pairs. For example, content length, content type, response date, and server type.
+4. Response Body – Indicates response message content or resource representation.
+
+[Source](http://www.techbeamers.com/rest-api-interview-questions-answers/)
+
+### Explain The Caching Mechanism?
+
+Caching is a process of storing server response at the client end. It makes the 
+server save significant time from serving the same resource again and again.
+
+The server response holds information which leads a client to perform the caching. 
+It helps the client to decide how long to archive the response or not to store it at all.
+
+[Source](http://www.techbeamers.com/rest-api-interview-questions-answers/)
+
+### Authentication - What are JWTs?
+
+JSON Web Tokens. It's a solution for API Authentication and OAuth2. 
+
+### Authentication - Where to store Session IDs, tokens?
+
+You can store in localStorage/sessionStorage or in cookies. Since Javascript have 
+access to the web storage, it can be less secure and vulnerable to 
+**cross-site scripting (XSS)** attacks. 
+
+But with cookies, you can set ```HttpOnly``` cookie flag to prevent javascript from 
+accessing the cookie. 
+
+### What is statelessness in RESTful Webservices?
+
+As per REST architecture, a RESTful web service should not keep a client state 
+on server. This restriction is called statelessness. It is responsibility of the 
+client to pass its context to server and then server can store this context to 
+process client's further request. For example, session maintained by server is 
+identified by session identifier passed by the client.
+
+[Source](https://www.tutorialspoint.com/restful/restful_interview_questions.htm)
+
+### Common Headers 
+
+Header | Description
+--- | ---
+**Date** | represents the date and time at which the message was originated
+**Cache-Control** | Used to specify directives that MUST be obeyed by all caching mechanisms along the request/response chain
+**Last-Modified** | Indicates the date and time at which the origin server believes the variant was last modified
+**Location** | For 201 (Created) responses, the Location is that of the new resource which was created by the request. For 3xx responses, the location SHOULD indicate the server's preferred URI for automatic redirection to the resource. The field value consists of a single absolute URI.
+**Content-Type** | The Content-Type entity-header field indicates the media type of the entity-body sent to the recipient or, in the case of the HEAD method, the media type that would have been sent had the request been a GET.
+**Host** | The Host request-header field specifies the Internet host and port number of the resource being requested, as obtained from the original URI given by the user or referring resource
+**Accept** | The Accept request-header field can be used to specify certain media types which are acceptable for the response. Accept headers can be used to indicate that the request is specifically limited to a small set of desired types, as in the case of a request for an in-line image.
+
+[Source](http://www.restpatterns.org/HTTP_Headers)
+
+### Cache Control Directives
+
+```
+cache-request-directive =
+       "no-cache"                          ; Section 14.9.1
+     | "no-store"                          ; Section 14.9.2
+     | "max-age" "=" delta-seconds         ; Section 14.9.3, 14.9.4
+     | "max-stale" [ "=" delta-seconds ]   ; Section 14.9.3
+     | "min-fresh" "=" delta-seconds       ; Section 14.9.3
+     | "no-transform"                      ; Section 14.9.5
+     | "only-if-cached"                    ; Section 14.9.4
+     | cache-extension                     ; Section 14.9.6
+
+cache-response-directive =
+     "public"                               ; Section 14.9.1
+   | "private" [ "=" <"> 1#field-name <"> ] ; Section 14.9.1
+   | "no-cache" [ "=" <"> 1#field-name <"> ]; Section 14.9.1
+   | "no-store"                             ; Section 14.9.2
+   | "no-transform"                         ; Section 14.9.5
+   | "must-revalidate"                      ; Section 14.9.4
+   | "proxy-revalidate"                     ; Section 14.9.4
+   | "max-age" "=" delta-seconds            ; Section 14.9.3
+   | "s-maxage" "=" delta-seconds           ; Section 14.9.3
+   | cache-extension                        ; Section 14.9.6
+```
+
+[Source](http://www.restpatterns.org)
+
+### What are the best practices to be followed while designing a secure RESTful web service?
+
+**Validation** − Validate all inputs on the server. Protect your server against SQL or NoSQL injection attacks.
+**Session based authentication** − Use session based authentication to authenticate a user whenever a request is made to a Web Service method.
+**No sensitive data in URL** − Never use username, password or session token in URL , these values should be passed to Web Service via POST method.
+**Restriction on Method execution** − Allow restricted use of methods like GET, POST, DELETE. GET method should not be able to delete data.
+**Validate Malformed XML/JSON** − Check for well formed input passed to a web service method.
+**Throw generic Error Messages** − A web service method should use HTTP error messages like 403 to show access forbidden etc.
+
+[Source](https://www.tutorialspoint.com/restful/restful_interview_questions.htm)
 
 
-<!-- ### Basic JS programmming
+### HTTP Status Codes 
 
-* Scope of variable
-* What is Associative Array? How do we use it?
+```
+200 - OK
+201 - Created
+202 - Accepted
+204 - No Content
+400 - Bad Request
+401 - Unauthorized
+402 - Payment Required
+403 - Forbidden
+404 - Not Found
+405 - Method Not Allowed
+500 - Internal Server Error
+```
 
-### OOPS JS
+[Source](http://www.restpatterns.org/HTTP_Status_Codes)
 
-* Difference between Classic Inheritance and Prototypical Inheritance
-* What is difference between private variable, public variable and static variable? How we achieve this in JS?
-* How to add/remove properties to object in run time?
-* How to achieve inheritance ?
-* How to extend built-in objects?
-* Why extending array is bad idea?
-
-### DOM and JS
-
-* Difference between browser detection and feature detection
-* DOM Event Propagation
-* Event Delegation
-* Event bubbling V/s Event Capturing
-
-###Misc
-
-Graceful Degradation V/s Progressive Enhancement
-
-
- -->
