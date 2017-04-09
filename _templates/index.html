@@ -1,52 +1,26 @@
 {% extends 'base.html' %}
 
+{% block main %}
 
-
-{% block content %}
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 p-0 flex-last flex-md-first" >
-      <div class='border box-margin box-padding'>
-        <h4><strong>Links</strong></h4>
-        <ul>
-          <li>suk my dicl</li>
-          <li>suk my dicl</li>
-        </ul>
-      </div>
-      <div class='border box-margin box-padding'>
-        <h4><strong>Location</strong></h4>
-        <ul>
-          <li>Los Angeles</li>
-          <li>Kuwait</li>
-        </ul>
-      </div>
-    </div>
-
-
-    <div class="col-md-5 border box-margin box-padding">
-      <h1>Posts</h1>
-      <ul class="list-unstyled">
-        {% for file in pagination.files %}
-        <li class="text-muted">
-          <time><small>{{ file.date | date('YYYY-MM-DD') }}</small></time> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="{{ file.url }}">{{ file.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-
-    </div>
-    <div class="col border box-margin-last box-padding">
-      <h1>Projects</h1>
-      <ul>
-        {% for proj in site.data.profile.projects %}
-        <li><a href="{{proj.url}}">{{ proj.name }}</a> - {{ proj.description}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-  
-  </div>
-  
+<div class="border box-margin-last box-padding">
+  <h1>Posts</h1>
+  <ul class="list-unstyled">
+    {% for file in pagination.files %}
+    <li class="text-muted">
+      <time><small>{{ file.date | date('YYYY-MM-DD') }}</small></time> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="{{ file.url }}">{{ file.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 
-{% endblock%}
+<div class="border box-margin-last box-padding">
+  <h1>Projects</h1>
+  <ul>
+    {% for proj in site.data.profile.projects %}
+    <li><a href="{{proj.url}}">{{ proj.name }}</a> - {{ proj.description}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
+

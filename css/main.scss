@@ -2,12 +2,13 @@
 // VARIABLES
 // ----------------------
 
-$font-family-sans-serif:     "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-ejs:            'Montserrat', sans-serif;
 
 $primary-text:               rgba(0, 0, 0, .87);
+$between-text:               rgba(0, 0, 0, .72);
 $secondary-text:             rgba(0, 0, 0, .54);
 $thirdary-text:              rgba(0, 0, 0, .38);
 
@@ -72,6 +73,7 @@ a {
 
 h1,h2,h3,h4,h5,h6,p,ul,li {
   color: $primary-text;
+  // font-weight: lighter;
 }
 h1 {
   font-size: 2rem;
@@ -99,7 +101,7 @@ body {
   margin-right: auto;
   margin-top: 10px;
   @media (min-width: $md) { 
-    margin-top: 60px;
+    margin-top: 40px;
   }
 }
 
@@ -121,6 +123,10 @@ footer {
 }
 .border-top {
   border-top: $border-styling;
+}
+.border-top-left {
+  border-top: $border-styling;
+  border-left: $border-styling;
 }
 
 .text-muted {
@@ -145,6 +151,9 @@ footer {
 }
 .box-padding { 
   padding: 1rem;
+}
+.box-padding-large { 
+  padding: 2rem;
 }
 
 .flex-row {
@@ -182,4 +191,39 @@ footer {
 }
 .social-item{
   font-size: 1.5rem;
+}
+
+// ----------------------
+// PAGE 
+// ----------------------
+
+.post-title {  
+  // font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.page {
+  h2, h3 {
+    font-weight: 700;
+    color: $between-text;
+  }
+  p {
+    color: $between-text;
+  }
+  h2 {
+    font-size: 1.5rem;
+    padding-bottom: .75rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-bottom: $border-styling;
+  }
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    // color: $thirdary-text;
+  }
+  h4 {
+    font-size: 1.15rem;
+  }
 }

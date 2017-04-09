@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 
-{% block body_class %}post-template{% endblock%}
+{% block sidebar %}
+{% endblock %}
 
-{% block content %}
+{% block main %}
 
-<article class="post">
+<div class="border-top-left box-margin-last box-padding-large">
+  <article class="page col-9 ">
 
-  <header class="post-header">
-    <h1 class="post-title">{{file.title}}</h1>
-    <section class="post-meta">
-      <time class="post-date" datetime="{{file.date | date('D MMMM YYYY')}}">{{file.date | date('D MMMM YYYY')}}</time>
-      <span>&middot; {% for tag in file.tags %}
-        <a href="/tag/{{tag}}/">{{tag}}</a>
-      {% endfor%}</span>
+    <header class="post-header">
+      <h1 class="post-title">{{file.title}}</h1>
+     <!--  <section class="post-meta">
+        <time class="post-date" datetime="{{file.date | date('D MMMM YYYY')}}">{{file.date | date('D MMMM YYYY')}}</time>
+        <span>&middot; {% for tag in file.tags %}
+          <a href="/tag/{{tag}}/">{{tag}}</a>
+        {% endfor%}</span>
+      </section> -->
+    </header>
+
+    <section class="page-content">
+      {{file.content | safe}}
     </section>
-  </header>
 
-  <section class="post-content">
-    {{file.content | safe}}
-  </section>
+  </article>
+</div>
 
-  <footer class="post-footer">
-  </footer>
-
-</article>
-
-{% endblock%}
+{% endblock %}
