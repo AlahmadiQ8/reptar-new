@@ -472,10 +472,10 @@ Each HTTP request includes five key elements:
 
 Every HTTP response includes four key elements:
 
-1. Status/Response Code – Indicates Server status for the resource present in the HTTP request.For example, 404 means resource not found and 200 means response is ok.
-2. HTTP Version – Indicates HTTP version, for example-HTTP v1.1.
-3. Response Header – Contains metadata for the HTTP response message stored in the form of key-value pairs. For example, content length, content type, response date, and server type.
-4. Response Body – Indicates response message content or resource representation.
+1. **Status/Response Code** – Indicates Server status for the resource present in the HTTP request.For example, 404 means resource not found and 200 means response is ok.
+2. **HTTP Version** – Indicates HTTP version, for example-HTTP v1.1.
+3. **Response Header** – Contains metadata for the HTTP response message stored in the form of key-value pairs. For example, content length, content type, response date, and server type.
+4. **Response Body** – Indicates response message content or resource representation.
 
 [Source](http://www.techbeamers.com/rest-api-interview-questions-answers/)
 
