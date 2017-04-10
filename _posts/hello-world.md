@@ -315,10 +315,109 @@ String.prototype.repeatify = function(times) {
 }
 ```
 
+### How could you find all prime factors of a number?
+
+```javascript
+function primes(num) {
+  let divisor = 2; 
+  const list = []; 
+  while(divisor <= num) {
+    if (num % divisor === 0) {
+      list.push(divisor);
+      num /= divisor;
+    } else {
+      divisor += 1;
+    }
+  }
+  return list;
+}
+console.log(primes(9)) // [3, 3]
+```
+
+[Source](http://www.thatjsdude.com/interview/js1.html)
+
+### Write a factorial function
+
+```javascript
+function factorial(n) {
+  if (n === 1) {
+    return 1;
+  } else {
+    return n * factorial(--n);
+  }
+}
+```
+
+### Recursive Greatest Common divisor function
+
+```javascript
+function greatestCommonDivisor(a, b){
+  if(b == 0)
+    return a;
+  else 
+    return greatestCommonDivisor(b, a%b);
+}
+```
+
+[Source](http://www.thatjsdude.com/interview/js1.html)
+
+## Algorithms
+
+```
+Algorithm       |  time complexity  |  space complexity
+--------------- | ----------------- |  -----------------
+Bubble sort     |  O(n^2)           |  O(1) 
+Selection sort  |  O(n^2)           |  O(1) 
+Merge sort      |  O(n log(n^2))    |  depends
+```
+
+### Merge two sorted arrays into one sorted array
+
+```javascript
+function merge(arrA, arrB) {
+  var i, j, arr;
+  arr = [];
+  i = j = 0;
+  while( i < arrA.length || j < arrB.length) {
+    if (i < arrA.length && arrA[i] <= arrB[j]) {
+      arr.push(arrA[i]);
+      i += 1;
+    } else if (j < arrB.length) {
+      arr.push(arrB[j]);
+      j += 1;
+    }
+  }
+  return arr;
+}
+```
+
+### Missing number 
+
+**Question**: from a unsorted array of numbers 1 to 100 excluding one number, 
+how will you find that number.
+
+**Explanation**: You have an array of numbers 1 to 100 in an array. Only one 
+number is missing in the array. The array is unsorted. Find the missing number.
+
+```javascript
+function missingNumber(arr) {
+  const n = arr.length+1;
+  const expectedSum = n * (n+1)/2;
+  const sum = arr.reduce((acc, val) => acc+val, 0);
+  return expectedSum - sum;
+}
+```
+
+[Source](http://www.thatjsdude.com/interview/js1.html)
+
+
 ## Javascript Interview Links 
 
 * [5 Typical JavaScript Interview Exercises](https://www.sitepoint.com/5-typical-javascript-interview-exercises/)
 * [25 Essential JavaScript Interview Questions*](https://www.toptal.com/javascript/interview-questions)
+* [JS: Interview Algorithm - part 1: beginner](http://www.thatjsdude.com/interview/js1.html)
+* [JS: Interview Algorithm - part 1: beginner](http://www.thatjsdude.com/interview/js2.html)
+* [Interview Questions for front-end-Developer](http://www.thatjsdude.com/interview/index.html)
 
 ## MongoDb Questions
 

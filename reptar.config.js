@@ -13,7 +13,7 @@ const markdownAnchor = reptar => {
 const markdownToc = reptar => {
   const md = reptar.renderer.getMarkdownEngine();
   md.use(require("markdown-it-table-of-contents"), {
-    includeLevel: [2, 3],
+    includeLevel: [2, 3, 4],
     containerClass: 'table-of-contents'
   });
 }
