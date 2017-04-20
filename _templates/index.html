@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% set noStretch = true %}
+
 {% block main %}
 
-<div class="border box-margin-last box-padding">
+<div class="box-bg box-margin-last box-padding">
   <h1>Posts</h1>
   <ul class="list-unstyled">
     {% for file in pagination.files %}
@@ -13,7 +15,7 @@
   </ul>
 </div>
 
-<div class="border box-margin-last box-padding">
+<div class="box-bg box-margin-last box-padding">
   <h1>Projects</h1>
   <ul>
     {% for proj in site.data.profile.projects %}

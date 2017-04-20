@@ -12,10 +12,12 @@ $primary-text:               rgba(0, 0, 0, .87);
 $between-text:               rgba(0, 0, 0, .72);
 $secondary-text:             rgba(0, 0, 0, .54);
 $thirdary-text:              rgba(0, 0, 0, .38);
+$fourdary-text:              rgba(0, 0, 0, .34);
 
 $primary-text-light:         rgba(255, 255, 255, .87);
 $secondary-text-light:       rgba(255, 255, 255, .70);
 $thirdary-text-light:        rgba(255, 255, 255, .54);
+
 
 $blue:                      #39ADD1 !default;
 $blue-light:                #72D4FF;
@@ -39,15 +41,19 @@ $border-styling:            2px solid #ebebeb;
 $profile-background:        $blue-cool;
 
 // ----------------------
-// DEBUG  
+// DEBUG
 // ----------------------
 
-// body {
-//   background-color: #f1f2f1;
-// }
-// div[class*="border"] {
-//   background-color: #fff; 
-// }
+body {
+  // background-color: #f1f2f1;
+  background-color: #f0f0f3;
+}
+div[class*="border"] {
+  background-color: #fff;
+}
+footer[class*="border"] {
+  background-color: #fff;
+}
 .container {
   // @extend .border;
   // margin: 50px auto;
@@ -58,11 +64,11 @@ $profile-background:        $blue-cool;
 // }
 
 // ----------------------
-// BASE 
+// BASE
 // ----------------------
 
 body, h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-base; 
+  font-family: $font-family-base;
 }
 
 ul {
@@ -86,6 +92,7 @@ h1,h2,h3,h4,h5,h6,p,ul,li {
 h1 {
   font-size: 2rem;
   color: $pink-dark;
+  margin-bottom: 1rem;
 }
 h2 {
   font-size: 1.75rem;
@@ -108,7 +115,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  @media (min-width: $md) { 
+  @media (min-width: $md) {
     margin-top: 20px;
   }
 }
@@ -127,45 +134,65 @@ footer {
 }
 
 .border {
-  border: $border-styling;
+  // border: $border-styling;
 }
 .border-top {
-  border-top: $border-styling;
+  // border-top: $border-styling;
 }
 .border-top-left {
-  border-top: $border-styling;
-  border-left: $border-styling;
+  // border-top: $border-styling;
+  // border-left: $border-styling;
 }
 
 .text-muted {
-  color: $thirdary-text;
+  color: $fourdary-text !important;
 }
+.text-lite {
+  font-weight: 300;
+}
+
+@mixin custom-hr($height, $width: 100%) { 
+    border-top: 1px dashed #bbb;
+    border-bottom: 0;
+    height: $height;
+    width: $width;
+    @content;
+}
+hr {
+  @include custom-hr(0, 80%) {
+    margin: 1em auto;
+  }
+}
+
 // ----------------------
-// LAYOUT 
+// LAYOUT
 // ----------------------
+.box-bg {
+  background-color: #fff;
+}
 
 .box-margin {
   margin-bottom: 1rem;
-  @media (min-width: $md) { 
+  @media (min-width: $md) {
     // margin-bottom: 0;
     margin-right: 1rem;
   }
 }
 .box-margin-last {
   margin-bottom: 1rem;
-  @media (min-width: $md) { 
+  @media (min-width: $md) {
     // margin-bottom: 0;
   }
 }
-.box-padding { 
+.box-padding {
   padding: 1rem;
 }
-.box-padding-large { 
+.box-padding-large {
   padding: 2rem;
 }
 
 .flex-row {
-  display: flex; 
+  display: flex;
   flex-direction: row;
 }
 .flex-row-around {
@@ -183,17 +210,17 @@ footer {
 }
 
 // ----------------------
-// PROFILE HEADER 
+// PROFILE HEADER
 // ----------------------
 .profile-header {
-  h1, p {  
+  h1, p {
     margin-bottom: 0;
   }
   p {
     font-weight: lighter;
-  } 
+  }
 }
-.profile-box { 
+.profile-box {
   background-color: $profile-background;
   a {
     color: white;
@@ -207,10 +234,10 @@ footer {
 }
 
 // ----------------------
-// PAGE 
+// PAGE
 // ----------------------
 
-.post-title {  
+.post-title {
   // font-weight: bold;
   margin-bottom: 3rem;
 }
@@ -262,24 +289,13 @@ h6:hover .anchor-link {
   p {
     color: $between-text;
   }
-  
   // http://stackoverflow.com/a/19656779/5431968
-  // ul {
-  //   list-style:none;
-  //   line-height: 1.7rem;
-  // }
-  // ul > li:before {    
-  //   font-family: 'FontAwesome';
-  //   content: '\f101';
-  //   margin:0 10px 0 -15px;
-  //   // font-size: .75rem;
-  //   color: $pink-dark;
-  // }
-  // li > ul > li:before {    
-  //   font-family: 'FontAwesome';
-  //   content: '\f101';
-  //   margin:0 10px 0 -15px;
-  //   color: $pink;
-  //   // font-size: .75rem;
-  // }
+}
+
+// ----------------------
+// ABOUT ME
+// ----------------------
+
+.job li {
+  margin-bottom: .5rem;
 }

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block main %}
+
+<div class="row m-0">
+  <div class="col p-0">
+    <div class="box-bg box-margin box-padding">
+      <h1>Education</h1>
+      <div>
+        <h4>University of California, Los Angeles</h4>
+        <div class='d-flex justify-content-between'>
+          <p class='text-muted my-0'><small>GPA: 3.46</small></p>
+          <p class='text-muted my-0'><small>Sept 2013 - Mar 2015</small></p>
+        </div>
+        <p class='text-lite'>Ms in Electrical Engineering</p>
+      </div>
+      <div>
+        <h4>Oregon State University</h4>
+        <div class='d-flex justify-content-between'>
+          <p class='text-muted my-0'><small>GPA: 3.56</small></p>
+          <p class='text-muted my-0'><small>Sept 2009 - Jun 2015</small></p>
+        </div>
+        <p class='text-lite'>Ms in Electrical Engineering</p>
+      </div>
+    </div>
+
+    <div class="box-bg box-margin box-padding">
+      <h1>Projects</h1>
+      <ul>
+        {% for proj in site.data.profile.projects %}
+        <li><a href="{{proj.url}}">{{ proj.name }}</a> - {{ proj.description}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="box-bg box-margin box-padding">
+      <h1>Skills</h1>
+      <h4>Backend</h4>
+      <ul class=''>
+        <li>Node.js, Express</li>
+        <li>RESTful Web Services, WebRTC</li>
+        <li>MongdoDb, MySQL</li>
+      </ul>
+      <h4>Frontend</h4>
+      <ul>
+        <li>CSS/SASS, Bootstrap</li>
+        <li>HTML, EJS, Handlebars, Nunjucks</li>
+        <li>Javascript, jQuery, Backbone</li>
+      </ul>
+      <h4>Testing</h4>
+      <ul>
+        <li>Mocha, Chai, Robot Framework, Nightwatch.js</li>
+        <li>Selenium Webdriver</li>
+      </ul>
+      <h4>CI/Agile</h4>
+      <ul>
+        <li>Webpack, Brunch, Jeknkins</li>
+        <li>JIRA, Bugzilla</li>
+      </ul>
+      <h4>Langauges/Platforms</h4>
+      <ul>
+        <li>Javascript, Python, Shell, PHP, C</li>
+        <li>Git, SVN</li>
+      </ul>
+      <h4>Technical Support</h4>
+      <ul>
+        <li>Zendesk tools</li>
+        <li>Proficiency with Linux command line</li>
+        <li>Operating Systems: Linux, Mac, Windows</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="col-md-7 p-0 d-flex flex-column align-content-stretch">
+    <div class="flex-grow box-bg box-margin-last box-padding">
+      <h1>Experience</h1>
+      <div class='job'>
+        <h4>ElephantDrive</h4>
+        <div class='d-flex justify-content-between mb-1'>
+          <p class='text-muted my-0'>Developer Support Engineer</p>
+          <p class='text-muted my-0'>March 2016 - Present</p>
+        </div>
+        <ul>
+          <li>Write and maintain automated tests for our REST web service using Robot Framework. </li>
+          <li>Solve and troubleshoot user’s tech issues with their NAS devices connecting with our web service. I spend a lot of time with the Linux command line to help users.</li>
+          <li>Automate end user website testing using Selenium Webdriver and Nightwatch js.</li>
+          <li>Manage and maintain content, design, and layout of the marketing site.</li>
+        </ul>
+      </div>
+      <hr>
+      <div class='job'>
+        <h4>Canoga Perkins</h4>
+        <div class='d-flex justify-content-between mb-1'>
+          <p class='text-muted my-0'>Test Engineer</p>
+          <p class='text-muted my-0'>Dec 2014 - Mar 2016</p>
+        </div>
+        <ul>
+          <li>Automated testing of Network Management web application with Selenium Webdriver and Robot Framework.</li>
+          <li>Wrote and maintained Python, tcl and shell scripts for test automation for Ethernet devices.</li>
+          <li>Implemented Robot Framework Test Suites and plans using custom Python Libraries.</li>
+          <li>Designed and maintained a MongoDB database to store software user-interface navigations for UI test automation.</li>
+          <li>Document software defects using a bug tracking system and report defects to software developers.</li>
+          <li>Performed product verification and testing of Network interface devices (layer 2 & 3 protocols).</li>
+        </ul>
+      </div>
+      <hr>
+      <div class='job'>
+        <h4>Southern California Edison</h4>
+        <div class='d-flex justify-content-between mb-1'>
+          <p class='text-muted my-0'>Network Operations Engineer, Intern</p>
+          <p class='text-muted my-0'>Jun 2014 - Dec 2014</p>
+        </div>
+        <ul>
+          <li>Built a web app to find optimal paths between two sites on the company’s SONET (SDH) network topology.
+            <ul>
+              <li>Mapped the network topology from a MySQL database into a graph implementation written in PHP.</li>
+              <li>Implemented Dijkstra's algorithm to find the shortest path between two sites.</li>
+            </ul>
+          </li>
+          <li>Reduced labor time by implementing a web application to predict for the cost of building a new link for a customer site using a regression model programmed in R.</li>
+          <li>Wrote SQL queries and python scripts for verification and correction of database entries in the network database.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

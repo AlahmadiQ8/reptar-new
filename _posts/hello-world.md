@@ -11,7 +11,7 @@ tags:
 
 
 
-## General Javascript 
+## General Javascript
 
 ### Write a function that sums a variable number of arguments. Then apply the function to sum an array
 
@@ -77,38 +77,38 @@ var teacher1 = new Teacher('Dave', 'Griffiths', 'mathematics');
 
 ### What are two-way data binding and one-way data flow, and how are they different?
 
-Two way data binding means that UI fields are bound to model data dynamically 
+Two way data binding means that UI fields are bound to model data dynamically
 such that when a UI field changes, the model data changes with it and vice-versa.
 
-One way data flow means that the model is the single source of truth. Changes 
-in the UI trigger messages that signal user intent to the model (or “store” in React). 
-Only the model has the access to change the app’s state. The effect is that data 
+One way data flow means that the model is the single source of truth. Changes
+in the UI trigger messages that signal user intent to the model (or “store” in React).
+Only the model has the access to change the app’s state. The effect is that data
 always flows in a single direction, which makes it easier to understand.
 
 [Source](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 
 ### What is asynchronous programming, and why is it important in JavaScript?
 
-Synchronous programming means that, barring conditionals and function calls, 
-code is executed sequentially from top-to-bottom, blocking on long-running tasks 
+Synchronous programming means that, barring conditionals and function calls,
+code is executed sequentially from top-to-bottom, blocking on long-running tasks
 such as network requests and disk I/O.
 
-Asynchronous programming means that the engine runs in an event loop. When a 
-blocking operation is needed, the request is started, and the code keeps running 
-without blocking for the result. When the response is ready, an interrupt is fired, 
-which causes an event handler to be run, where the control flow continues. 
+Asynchronous programming means that the engine runs in an event loop. When a
+blocking operation is needed, the request is started, and the code keeps running
+without blocking for the result. When the response is ready, an interrupt is fired,
+which causes an event handler to be run, where the control flow continues.
 In this way, a single program thread can handle many concurrent operations.
 
 [Source](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 
 ### What is prototypal inheritance?
 
-In a classical language, classes typically define the structure of objects, but 
-in a prototypal language, the objects themselves define their structure, and 
+In a classical language, classes typically define the structure of objects, but
+in a prototypal language, the objects themselves define their structure, and
 this structure can be inherited and modified by other objects at runtime.
 
-Prototypal inheritance first appeared in Self and has since appeared in many 
-other languages, but these days most people think of JavaScript when they think 
+Prototypal inheritance first appeared in Self and has since appeared in many
+other languages, but these days most people think of JavaScript when they think
 of prototypal inheritance.
 
 ### An Object
@@ -135,21 +135,21 @@ var a = {
     return this.x + this.y + z;
   }
 };
- 
+
 var b = {
   y: 20,
   __proto__: a
 };
- 
+
 var c = {
   y: 30,
   __proto__: a
 };
 
-// The above is equivelant to 
+// The above is equivelant to
 // var b = Object.create(a, {y: {value: 20}});
 // var c = Object.create(a, {y: {value: 30}});
- 
+
 // call the inherited method
 b.calculate(30); // 60
 c.calculate(40); // 80
@@ -162,12 +162,12 @@ c.calculate(40); // 80
 
 ### Constructor
 
-Besides creation of objects by specified pattern, a constructor function does 
-another useful thing — it automatically sets a prototype object for newly created 
-objects. This prototype object is stored in the ConstructorFunction.prototype 
+Besides creation of objects by specified pattern, a constructor function does
+another useful thing — it automatically sets a prototype object for newly created
+objects. This prototype object is stored in the ConstructorFunction.prototype
 property.
 
-E.g., we may rewrite previous example with b and c objects using a constructor 
+E.g., we may rewrite previous example with b and c objects using a constructor
 function. Thus, the role of the object a (a prototype) Foo.prototype plays:
 
 ```javascript
@@ -178,51 +178,51 @@ function Foo(y) {
   // creation own "y" property
   this.y = y;
 }
- 
+
 // also "Foo.prototype" stores reference
 // to the prototype of newly created objects,
 // so we may use it to define shared/inherited
 // properties or methods, so the same as in
 // previous example we have:
- 
+
 // inherited property "x"
 Foo.prototype.x = 10;
- 
+
 // and inherited method "calculate"
 Foo.prototype.calculate = function (z) {
   return this.x + this.y + z;
 };
- 
+
 // now create our "b" and "c"
 // objects using "pattern" Foo
 var b = new Foo(20);
 var c = new Foo(30);
- 
+
 // call the inherited method
 b.calculate(30); // 60
 c.calculate(40); // 80
- 
+
 // let's show that we reference
 // properties we expect
- 
+
 console.log(
- 
+
   b.__proto__ === Foo.prototype, // true
   c.__proto__ === Foo.prototype, // true
- 
+
   // also "Foo.prototype" automatically creates
   // a special property "constructor", which is a
   // reference to the constructor function itself;
   // instances "b" and "c" may found it via
   // delegation and use to check their constructor
- 
+
   b.constructor === Foo, // true
   c.constructor === Foo, // true
   Foo.prototype.constructor === Foo, // true
- 
+
   b.calculate === b.__proto__.calculate, // true
   b.__proto__.calculate === Foo.prototype.calculate // true
- 
+
 );
 ```
 
@@ -264,16 +264,16 @@ arr = []
 
 ```javascript
 function mul (x) {
-  return function (y) { // anonymous function 
-    return function (z) { // anonymous function 
-      return x * y * z; 
+  return function (y) { // anonymous function
+    return function (z) { // anonymous function
+      return x * y * z;
     };
   };
 }
 ```
 
 
-### Prototypal Inheritance - What will be the output of the code below? 
+### Prototypal Inheritance - What will be the output of the code below?
 
 ```javascript
 var Employee = {
@@ -284,13 +284,13 @@ delete emp1.company
 console.log(emp1.company);
 ```
 
-The output would be ```xyz```. Here, ```emp1``` object has ```company``` as its prototype property. 
+The output would be ```xyz```. Here, ```emp1``` object has ```company``` as its prototype property.
 The ```delete``` operator doesn't delete prototype property.
 
-emp1 object doesn't have company as its own property. You can test it 
-```console.log(emp1.hasOwnProperty('company')); //output : false```. 
-However, we can delete the company property directly from the ```Employee``` object 
-using ```delete Employee.company```. Or, we can also delete the ```emp1``` object using the 
+emp1 object doesn't have company as its own property. You can test it
+```console.log(emp1.hasOwnProperty('company')); //output : false```.
+However, we can delete the company property directly from the ```Employee``` object
+using ```delete Employee.company```. Or, we can also delete the ```emp1``` object using the
 ```__proto__``` property ```delete emp1.__proto__.company```.
 
 [Source](https://www.codementor.io/nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z)
@@ -307,9 +307,9 @@ console.log('hello'.repeatify(3)); // output hellohellohello
 String.prototype.repeatify = function(times) {
   var str = '';
   for (var i=0; i<times; i++) {
-    str += this; 
+    str += this;
   }
-  return str; 
+  return str;
 }
 ```
 
@@ -317,8 +317,8 @@ String.prototype.repeatify = function(times) {
 
 ```javascript
 function primes(num) {
-  let divisor = 2; 
-  const list = []; 
+  let divisor = 2;
+  const list = [];
   while(divisor <= num) {
     if (num % divisor === 0) {
       list.push(divisor);
@@ -352,7 +352,7 @@ function factorial(n) {
 function greatestCommonDivisor(a, b){
   if(b == 0)
     return a;
-  else 
+  else
     return greatestCommonDivisor(b, a%b);
 }
 ```
@@ -364,8 +364,8 @@ function greatestCommonDivisor(a, b){
 ```
 Algorithm       |  time complexity  |  space complexity
 --------------- | ----------------- |  -----------------
-Bubble sort     |  O(n^2)           |  O(1) 
-Selection sort  |  O(n^2)           |  O(1) 
+Bubble sort     |  O(n^2)           |  O(1)
+Selection sort  |  O(n^2)           |  O(1)
 Merge sort      |  O(n log(n^2))    |  depends
 ```
 
@@ -373,9 +373,9 @@ Merge sort      |  O(n log(n^2))    |  depends
 
 ```javascript
 function merge(arrA, arrB) {
-  var i, j, arr;
-  arr = [];
-  i = j = 0;
+  let i = 0, j = 0;
+  const arr = [];
+
   while( i < arrA.length || j < arrB.length) {
     if (i < arrA.length && arrA[i] <= arrB[j]) {
       arr.push(arrA[i]);
@@ -389,12 +389,12 @@ function merge(arrA, arrB) {
 }
 ```
 
-### Missing number 
+### Missing number
 
-**Question**: from a unsorted array of numbers 1 to 100 excluding one number, 
+**Question**: from a unsorted array of numbers 1 to 100 excluding one number,
 how will you find that number.
 
-**Explanation**: You have an array of numbers 1 to 100 in an array. Only one 
+**Explanation**: You have an array of numbers 1 to 100 in an array. Only one
 number is missing in the array. The array is unsorted. Find the missing number.
 
 ```javascript
@@ -409,25 +409,39 @@ function missingNumber(arr) {
 [Source](http://www.thatjsdude.com/interview/js1.html)
 
 
-## Javascript Interview Links 
+## Javascript Links
+
+### Interview Questions
 
 * [5 Typical JavaScript Interview Exercises](https://www.sitepoint.com/5-typical-javascript-interview-exercises/)
 * [25 Essential JavaScript Interview Questions*](https://www.toptal.com/javascript/interview-questions)
 * [JS: Interview Algorithm - part 1: beginner](http://www.thatjsdude.com/interview/js1.html)
 * [JS: Interview Algorithm - part 1: beginner](http://www.thatjsdude.com/interview/js2.html)
 * [Interview Questions for front-end-Developer](http://www.thatjsdude.com/interview/index.html)
+* [Node.js Interview Questions and Answers (2017 Edition)](https://blog.risingstack.com/node-js-interview-questions-and-answers-2017/)
+
+### Great Articles
+
+* [Master the JavaScript Interview: What is a Closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
+* [Master the JavaScript Interview: What’s the Difference Between Class & Prototypal Inheritance?](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
+* [Master the JavaScript Interview: What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+* [Master the JavaScript Interview: What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
+* [Master the JavaScript Interview: What is a Pure Function?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
+* [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+* [Common Misconceptions About Inheritance in JavaScript](https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a)
+
 
 ## MongoDb Questions
 
 ### Schema design example
 
-* Library Management Application 
+* Library Management Application
   * Patrons/Users
   * Books
   * Authors
   * Publishers
 
-```javascript 
+```javascript
 db.patrons.find({_id: "joe"})
 {
   _id: "joe",
@@ -481,38 +495,38 @@ Every HTTP response includes four key elements:
 
 ### Explain The Caching Mechanism?
 
-Caching is a process of storing server response at the client end. It makes the 
+Caching is a process of storing server response at the client end. It makes the
 server save significant time from serving the same resource again and again.
 
-The server response holds information which leads a client to perform the caching. 
+The server response holds information which leads a client to perform the caching.
 It helps the client to decide how long to archive the response or not to store it at all.
 
 [Source](http://www.techbeamers.com/rest-api-interview-questions-answers/)
 
 ### Authentication - What are JWTs?
 
-JSON Web Tokens. It's a solution for API Authentication and OAuth2. 
+JSON Web Tokens. It's a solution for API Authentication and OAuth2.
 
 ### Authentication - Where to store Session IDs, tokens?
 
-You can store in localStorage/sessionStorage or in cookies. Since Javascript have 
-access to the web storage, it can be less secure and vulnerable to 
-**cross-site scripting (XSS)** attacks. 
+You can store in localStorage/sessionStorage or in cookies. Since Javascript have
+access to the web storage, it can be less secure and vulnerable to
+**cross-site scripting (XSS)** attacks.
 
-But with cookies, you can set ```HttpOnly``` cookie flag to prevent javascript from 
-accessing the cookie. 
+But with cookies, you can set ```HttpOnly``` cookie flag to prevent javascript from
+accessing the cookie.
 
 ### What is statelessness in RESTful Webservices?
 
-As per REST architecture, a RESTful web service should not keep a client state 
-on server. This restriction is called statelessness. It is responsibility of the 
-client to pass its context to server and then server can store this context to 
-process client's further request. For example, session maintained by server is 
+As per REST architecture, a RESTful web service should not keep a client state
+on server. This restriction is called statelessness. It is responsibility of the
+client to pass its context to server and then server can store this context to
+process client's further request. For example, session maintained by server is
 identified by session identifier passed by the client.
 
 [Source](https://www.tutorialspoint.com/restful/restful_interview_questions.htm)
 
-### Common Headers 
+### Common Headers
 
 - **Date** - represents the date and time at which the message was originated
 - **Cache-Control** - Used to specify directives that MUST be obeyed by all caching mechanisms along the request/response chain
@@ -564,7 +578,7 @@ cache-response-directive =
 [Source](https://www.tutorialspoint.com/restful/restful_interview_questions.htm)
 
 
-### HTTP Status Codes 
+### HTTP Status Codes
 
 ```
 200 - OK
