@@ -4,6 +4,10 @@
   "description": "",
   "main": "reptar.config.js",
   "scripts": {
+    "start": "reptar watch",
+    "build": "reptar clean && reptar build",
+    "deploy": "gh-pages -d _site -r https://github.com/AlahmadiQ8/alahmadiq8.github.io.git -b master",
+    "bd": "reptar clean && npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +18,9 @@
     "normalize.css": "^6.0.0",
     "reptar-excerpt": "^1.0.0",
     "reptar-html-minifier": "^1.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.12.0",
+    "reptar": "^3.0.1"
   }
 }

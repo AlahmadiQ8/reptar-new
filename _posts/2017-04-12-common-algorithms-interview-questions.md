@@ -1,21 +1,23 @@
 ---
-title: Common Algorithms for Interivew preparation
+title: Common Algorithms Written in Javascript (ES6) for Interivew preparation
 date: 2017-4-12
-draft: false
+draft: true
 ---
+
+Implementation of common algorithms that you may encounter in an interview.
 
 [[toc]]
 
-## Selection Sort 
+## Selection Sort
 
-This is the simplest sorting algorithm. It's good to at least know one or 
+This is the simplest sorting algorithm. It's good to at least know one or
 two sorting algorithms.
 
 ```javascript
 const swap = (arr, a, b) => {
   const temp = arr[a];
   arr[a] = arr[b];
-  arr[b] = temp; 
+  arr[b] = temp;
 }
 const selectionSort = (arr) => {
   let min;
@@ -40,22 +42,22 @@ console.log(arr); // [ 1, 2, 3, 3, 4, 4, 6, 7, 8 ]
 
 ## Binary Search
 
-```javascript 
+```javascript
 const binarySearch = (arr, value) => {
   let low = 0, high = arr.length-1, mid;
 
   while (low <= high) {
     mid = parseInt(((high + low) / 2));
     if (value < arr[mid]) {
-      high = mid-1; 
+      high = mid-1;
     } else if (value > arr[mid]) {
-      low = mid+1; 
+      low = mid+1;
     } else {
-      return mid; 
+      return mid;
     }
   }
 
-  return null; 
+  return null;
 }
 
 const binarySearchRecursive = (arr, value, low, high) => {
@@ -83,7 +85,7 @@ console.log(binarySearchRecursive(arr, 11, 0, arr.length-1)); // should return n
 
 ## Merge two sorted arrays into one sorted array
 
-```javascript 
+```javascript
 function merge(arrA, arrB) {
   let i = 0, j = 0;
   const arr = [];

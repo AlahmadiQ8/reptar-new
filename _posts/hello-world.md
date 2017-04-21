@@ -1,11 +1,12 @@
 ---
-title: General Interview Questions
+title: Interview Questions for Full Stack Javascript Developer
 date: 2017-4-7
 tags:
 - meta
+draft: true
 ---
 
-
+A series of interview questions I mostly gathered online. I hope you find it useful.
 
 [[toc]]
 
