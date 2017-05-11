@@ -1,9 +1,10 @@
 ---
 title: Interview Questions for Full Stack Javascript Developer
 date: 2017-4-7
+last_updated: 2017-4-7
 tags:
 - meta
-draft: true
+draft: false
 ---
 
 A series of interview questions I mostly gathered online. I hope you find it useful.

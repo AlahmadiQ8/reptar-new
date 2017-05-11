@@ -1,10 +1,15 @@
 ---
-title: Common Algorithms Written in Javascript (ES6) for Interivew preparation
+title: Common Algorithms Written in Javascript (ES6)
 date: 2017-4-12
 draft: false
+tags:
+  - javascript
+  - algorithms
 ---
 
-Implementation of common algorithms that you may encounter in an interview.
+I was reviewing Sorting and Search Algorithms and figured I'd implment them all
+ES6 Syntax. This will be an open post where I'd regularly update it with more
+code snippets.
 
 [[toc]]
 

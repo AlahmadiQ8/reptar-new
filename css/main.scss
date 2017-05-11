@@ -134,7 +134,7 @@ footer {
 }
 
 .border {
-  // border: $border-styling;
+  border: $border-styling;
 }
 .border-top {
   // border-top: $border-styling;
@@ -240,6 +240,10 @@ hr {
 .post-title {
   // font-weight: bold;
   margin-bottom: 3rem;
+}
+.post-meta {
+  color: $secondary-text;
+  font-size: .8rem;
 }
 .anchor-link {
     float: left;
