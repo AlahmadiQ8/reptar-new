@@ -4,7 +4,7 @@ date: 2017-4-7
 last_updated: 2017-4-7
 tags:
 - meta
-draft: false
+draft: true
 ---
 
 A series of interview questions I mostly gathered online. I hope you find it useful.
@@ -272,6 +272,22 @@ function mul (x) {
     };
   };
 }
+```
+
+### Write a function "flatten" that flattens nested arrays
+
+This should be super easy with [`Array.prototype.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+method.
+
+```javascript
+const flatten = arr => arr.reduce((acc, val) => {
+  return acc.concat(
+    Array.isArray(val) ? flatten(val) : val
+  )}, []
+);
+
+var a = [1, [3, [1,2,4,[76, 3],3]], [2, [2]], 2];
+console.log(flatten(a))
 ```
 
 

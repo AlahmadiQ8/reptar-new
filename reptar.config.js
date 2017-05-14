@@ -30,7 +30,7 @@ module.exports = {
     email: 'your-reptar@email.com',
     description: "Your website's description goes here.\n",
     baseurl: '', // the subpath of your site, e.g. /blog
-    url: 'http://yourdomain.com',
+    url: 'https://alahmadiq8.github.io',
   },
   // Where things are.
   // If you have a unique layout for your site and want to

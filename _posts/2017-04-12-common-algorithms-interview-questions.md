@@ -1,5 +1,6 @@
 ---
 title: Common Algorithms Written in Javascript (ES6)
+disqus_unique: 2017-4-12-common-algorithms
 date: 2017-4-12
 draft: false
 tags:
@@ -7,9 +8,10 @@ tags:
   - algorithms
 ---
 
-I was reviewing Sorting and Search Algorithms and figured I'd implment them all
-ES6 Syntax. This will be an open post where I'd regularly update it with more
-code snippets.
+I was reviewing [Sorting and Search Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) and figured I'd implment them
+JS ES6. This will be an open post where I'd regularly update it with more
+code snippets. Some of these are random puzzles I picked up from the internet.
+
 
 [[toc]]
 
