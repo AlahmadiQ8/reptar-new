@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "markdown-it-anchor": "^4.0.0",
     "markdown-it-table-of-contents": "^0.3.2",
     "normalize.css": "^6.0.0",
     "reptar-excerpt": "^1.0.0",

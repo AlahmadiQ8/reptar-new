@@ -1,13 +1,14 @@
 ---
-title: Interview Questions for Full Stack Javascript Developer
+title: Interview Questions and Resources for Javascript
 date: 2017-4-7
-last_updated: 2017-4-7
+last_updated: 2017-5-19
+disqus_unique: 2017-4-7-interview-questions
 tags:
 - meta
-draft: true
+draft: false
 ---
 
-A series of interview questions I mostly gathered online. I hope you find it useful.
+A series of interview questions and resources that I gathered online.
 
 [[toc]]
 
@@ -38,9 +39,11 @@ sum.apply(null, data); // 6
 ```javascript
 
 function Person(first, last) {
-  this.name = name;
-  this.last = last;
-};
+  this.name = {
+    first,
+    last
+  };
+}
 
 Person.prototype.greeting = function() {
   alert('Hi! I\'m ' + this.name.first + '.');
@@ -434,7 +437,7 @@ function missingNumber(arr) {
 * [5 Typical JavaScript Interview Exercises](https://www.sitepoint.com/5-typical-javascript-interview-exercises/)
 * [25 Essential JavaScript Interview Questions*](https://www.toptal.com/javascript/interview-questions)
 * [JS: Interview Algorithm - part 1: beginner](http://www.thatjsdude.com/interview/js1.html)
-* [JS: Interview Algorithm - part 1: beginner](http://www.thatjsdude.com/interview/js2.html)
+* [JS: Interview Algorithm - part 2: beginner](http://www.thatjsdude.com/interview/js2.html)
 * [Interview Questions for front-end-Developer](http://www.thatjsdude.com/interview/index.html)
 * [Node.js Interview Questions and Answers (2017 Edition)](https://blog.risingstack.com/node-js-interview-questions-and-answers-2017/)
 
@@ -447,6 +450,8 @@ function missingNumber(arr) {
 * [Master the JavaScript Interview: What is a Pure Function?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 * [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
 * [Common Misconceptions About Inheritance in JavaScript](https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a)
+* [AirbnbJavaScript Style Guide ES5](https://github.com/airbnb/javascript/tree/es5-deprecated/es5)
+* [Truth, Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/)
 
 
 ## MongoDb Questions
