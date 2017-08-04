@@ -450,8 +450,10 @@ function missingNumber(arr) {
 * [Master the JavaScript Interview: What is a Pure Function?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 * [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
 * [Common Misconceptions About Inheritance in JavaScript](https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a)
+* [AirbnbJavaScript Style Guide ES6](https://github.com/airbnb/javascript)
 * [AirbnbJavaScript Style Guide ES5](https://github.com/airbnb/javascript/tree/es5-deprecated/es5)
 * [Truth, Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/)
+* [JavaScript Scoping and Hoisting](http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html)
 
 
 ## MongoDb Questions

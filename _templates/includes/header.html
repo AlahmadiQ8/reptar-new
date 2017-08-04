@@ -7,8 +7,6 @@
         <h1 class='display-6 text-center'><a href="/">{% block header_title %}{{site.title}}{% endblock %}</a></h1>
         <div class="flex-row-around">
           {% if social.github %}<a target='_blank' class="social-item" href="{{ social.github }}"><i class="fa fa-github-alt" aria-hidden="true"></i></a>{% endif %}
-          {% if social.instagram %}<a target='_blank' class="social-item" href="{{ social.instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>{% endif %}
-          {% if social.facebook %}<a target='_blank' class="social-item" href="{{ social.facebook }}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>{% endif %}
           {% if social.stackoverflow %}<a target='_blank' class="social-item" href="{{ social.stackoverflow }}"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>{% endif %}
           {% if social.linkedin %}<a target='_blank' class="social-item" href="{{ social.linkedin }}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>{% endif %}
         </div>
